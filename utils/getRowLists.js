@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function getColumnLists(filePath) {
+function getRowLists(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, "utf8", (err, data) => {
       if (err) {
@@ -10,21 +10,18 @@ function getColumnLists(filePath) {
 
       const lines = data.trim().split("\n");
 
-      const column1 = [];
-      const column2 = [];
+      const rows = [];
 
       lines.forEach((line) => {
-        const [num1, num2] = line.trim().split(/\s+/).map(Number);
-        column1.push(num1);
-        column2.push(num2);
+        const row = line.trim().split(/\s+/).map(Number);
+        rows.push(row);
       });
 
       resolve({
-        column1,
-        column2,
+        rows,
       });
     });
   });
 }
 
-module.exports = { getColumnLists };
+module.exports = { getRowLists };
