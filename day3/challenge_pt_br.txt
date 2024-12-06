@@ -1,0 +1,75 @@
+--- Dia 3: Reflita sobre isso ---
+"Nossos computadores estão com problemas, então não tenho ideia 
+se temos algum Historiador Chefe em estoque! Mas você pode verificar o 
+depósito", diz o lojista levemente nervoso na North Pole Toboggan Rental 
+Shop. Os Historiadores saem para dar uma olhada.
+
+O lojista se vira para você. "Alguma chance de você ver por que nossos 
+computadores estão com problemas de novo?"
+
+O computador parece estar tentando executar um programa, mas sua memória 
+(sua entrada de quebra-cabeça) está corrompida. Todas as instruções foram embaralhadas!
+
+Parece que o objetivo do programa é apenas multiplicar alguns números. 
+
+Ele faz isso com instruções como mul(X,Y), onde X e Y são cada um números de 1 a 3
+dígitos. Por exemplo, mul(44,46) multiplica 44 por 46 para obter um resultado de 2024. 
+Similarmente, mul(123,4) multiplicaria 123 por 4.
+
+No entanto, como a memória do programa foi corrompida, também há muitos caracteres inválidos
+que devem ser ignorados, mesmo que pareçam parte de uma instrução mul. Sequências como mul(4*,
+mul(6,9!, ?(12,34) ou mul ( 2 , 4 ) não fazem nada.
+
+Por exemplo, considere a seguinte seção de memória corrompida:
+
+xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))
+
+Somente as quatro seções destacadas são instruções mul reais. Somando o resultado de 
+cada instrução, obtém-se 161 (2*4 + 5*5 + 11*8 + 8*5).
+
+Examine a memória corrompida em busca de instruções mul não corrompidas. 
+O que você obtém se somar todos os resultados das multiplicações?
+
+Para começar, obtenha sua entrada de quebra-cabeça.
+
+Resposta:
+
+--- Parte Dois ---
+Conforme você examina a memória corrompida, você percebe que algumas das instruções 
+condicionais também ainda estão intactas. Se você manipular algumas das instruções condicionais 
+não corrompidas no programa, você pode conseguir um resultado ainda mais preciso.
+
+Há duas novas instruções que você precisará manipular:
+
+A instrução do() habilita futuras instruções mul.
+A instrução don't() desabilita futuras instruções mul.
+
+Somente a instrução do() ou don't() mais recente se aplica. 
+No início do programa, as instruções mul são habilitadas.
+
+Por exemplo:
+
+xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))
+
+Esta memória corrompida é semelhante ao exemplo anterior, mas desta
+vez as instruções mul(5,5) e mul(11,8) estão desabilitadas porque há uma instrução
+don't() antes delas. As outras instruções mul funcionam normalmente, incluindo a do
+final que é reabilitada por uma instrução do().
+
+Desta vez, a soma dos resultados é 48 (2*4 + 8*5).
+
+Manipule as novas instruções; o que você obtém se somar todos os resultados apenas
+das multiplicações habilitadas?
+
+Resposta:
+
+
+
+// Regex explicação
+// Para mul(...) (por exemplo, mul(3,7)), a regex captura os dois números dentro
+// Aqui, (\d+) captura os números antes e depois da vírgula.
+// ----------------------
+// Para do() e don't(), o comportamento é não capturar valores numéricos, mas
+// apenas verificar a presença dessas strings.
+
+/(?:do\(\)|don't\(\)|mul\((\d+),(\d+)\))/g
