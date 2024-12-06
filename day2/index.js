@@ -1,4 +1,6 @@
-const { getRowLists } = require("../utils/getRowLists");
+const {
+  getFileRowsAsNumbersList,
+} = require("../utils/getFileRowsAsNumbersList");
 
 function isSafeReport(report) {
   const maxIncreaseAllowed = 3;
@@ -46,8 +48,8 @@ function checkSafeReportProblemDampene(report) {
 
 async function main() {
   try {
-    const input = await getRowLists("input.txt");
-    const reports = input.rows;
+    const reports = await getFileRowsAsNumbersList("input.txt");
+    console.log(reports);
 
     const safeReports = reports.filter((report) => isSafeReport(report));
     console.log("Part One:", safeReports.length);

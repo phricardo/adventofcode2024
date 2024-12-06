@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function getRowLists(filePath) {
+function getFileRowsAsNumbersList(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, "utf8", (err, data) => {
       if (err) {
@@ -17,11 +17,9 @@ function getRowLists(filePath) {
         rows.push(row);
       });
 
-      resolve({
-        rows,
-      });
+      resolve(rows);
     });
   });
 }
 
-module.exports = { getRowLists };
+module.exports = { getFileRowsAsNumbersList };

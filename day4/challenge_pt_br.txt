@@ -1,0 +1,56 @@
+--- Dia 4: Busca em Ceres ---
+
+"Parece que o Chefe não está aqui. Próximo!" Um dos
+Historiadores pega um dispositivo e aperta o único botão nele.
+Após um breve flash, você reconhece o interior da estação de
+monitoramento de Ceres!
+
+Enquanto a busca pelo Chefe continua, uma pequena Elfa que mora na
+estação puxa sua camisa; ela gostaria de saber se você poderia ajudá-la
+com sua busca por palavras (sua entrada de quebra-cabeça). Ela só precisa
+encontrar uma palavra: XMAS.
+
+Esta busca por palavras permite que as palavras sejam horizontais, verticais,
+diagonais, escritas ao contrário ou até mesmo sobrepostas a outras palavras.
+É um pouco incomum, no entanto, pois você não precisa apenas encontrar uma instância de
+XMAS - você precisa encontrar todas elas. Aqui estão algumas maneiras como XMAS pode
+aparecer, onde caracteres irrelevantes foram substituídos por .:
+
+..X...
+.SAMX.
+.A..A.
+XMAS.S
+.X....
+
+A busca por palavras real estará cheia de letras. Por exemplo:
+
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+
+Nesta caça-palavras, XMAS ocorre um total de 18 vezes; aqui está a mesma caça-palavras
+novamente, mas onde as letras não envolvidas em nenhum XMAS foram substituídas por .:
+
+....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX
+
+Dê uma olhada na caça-palavras do pequeno elfo. Quantas vezes XMAS aparece?
+
+Para começar, obtenha sua entrada de quebra-cabeça.
+
+Resposta:
