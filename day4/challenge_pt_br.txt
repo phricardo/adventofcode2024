@@ -3,7 +3,7 @@
 "Parece que o Chefe não está aqui. Próximo!" Um dos
 Historiadores pega um dispositivo e aperta o único botão nele.
 Após um breve flash, você reconhece o interior da estação de
-monitoramento de Ceres!
+monitoramento de planetas!
 
 Enquanto a busca pelo Chefe continua, uma pequena Elfa que mora na
 estação puxa sua camisa; ela gostaria de saber se você poderia ajudá-la
@@ -54,3 +54,39 @@ Dê uma olhada na caça-palavras do pequeno elfo. Quantas vezes XMAS aparece?
 Para começar, obtenha sua entrada de quebra-cabeça.
 
 Resposta:
+
+--- Parte Dois ---
+
+O Elfo olha para você com curiosidade. Você entendeu errado a tarefa?
+
+Procurando as instruções, você vira a caça-palavras para descobrir
+que este não é realmente um quebra-cabeça de XMAS; é um quebra-cabeça 
+de X-MAS no qual você deve encontrar dois MAS no formato de um X.
+Uma maneira de conseguir isso é assim:
+
+M.S
+.A.
+M.S
+
+Caracteres irrelevantes foram novamente substituídos por . 
+no diagrama acima. Dentro do X, cada MAS pode ser escrito para a frente ou para trás.
+
+Aqui está o mesmo exemplo de antes, mas desta vez todos 
+os X-MASes foram mantidos:
+
+.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........
+
+Neste exemplo, um X-MAS aparece 9 vezes.
+
+Vire a busca de palavras das instruções de volta para o 
+lado da busca de palavras e tente novamente. 
+Quantas vezes um X-MAS aparece?

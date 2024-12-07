@@ -1,5 +1,61 @@
 const { getLinesFromInput } = require("../utils/getLinesFromInput");
 
+function verificar(m, a, s) {
+  return m === "M" && a === "A" && s === "S";
+}
+
+function padraoXmasValido(mapa, linha, coluna) {
+  // Verifica o padrão "MAS" na diagonal principal (cima para baixo)
+  const diagonalPrincipalCima = verificar(
+    mapa[linha][coluna],
+    mapa[linha + 1][coluna + 1],
+    mapa[linha + 2][coluna + 2]
+  );
+
+  // Verifica o padrão "MAS" na diagonal principal (baixo para cima)
+  const diagonalPrincipalBaixo = verificar(
+    mapa[linha + 2][coluna + 2],
+    mapa[linha + 1][coluna + 1],
+    mapa[linha][coluna]
+  );
+
+  // Verifica o padrão "MAS" na diagonal secundária (cima para baixo)
+  const diagonalSecundariaCima = verificar(
+    mapa[linha + 2][coluna],
+    mapa[linha + 1][coluna + 1],
+    mapa[linha][coluna + 2]
+  );
+
+  // Verifica o padrão "MAS" na diagonal secundária (baixo para cima)
+  const diagonalSecundariaBaixo = verificar(
+    mapa[linha][coluna + 2],
+    mapa[linha + 1][coluna + 1],
+    mapa[linha + 2][coluna]
+  );
+
+  // Combina as condições para validar a presença do padrão "XMAS"
+  return (
+    (diagonalPrincipalCima || diagonalPrincipalBaixo) &&
+    (diagonalSecundariaCima || diagonalSecundariaBaixo)
+  );
+}
+
+function contarPadroesXmas(mapa, totalLinhas, totalColunas) {
+  let contador = 0;
+
+  mapa.forEach((linha, i) => {
+    if (i + 2 < totalLinhas) {
+      linha.forEach((_, j) => {
+        if (j + 2 < totalColunas && padraoXmasValido(mapa, i, j)) {
+          contador++;
+        }
+      });
+    }
+  });
+
+  return contador;
+}
+
 function searchDirection(x, y, dx, dy, rows, word, wordLength) {
   let matched = true;
   for (let i = 0; i < wordLength; i++) {
@@ -50,6 +106,17 @@ async function main() {
     let count = countWordInGrid(rows, word, wordLength);
 
     console.log(`A palavra "${word}" aparece ${count} vezes no grid.`);
+
+    // Part Two
+    const mapa = rows.map((linha) => linha.split(""));
+
+    const totalPadroesXMAS = contarPadroesXmas(
+      mapa,
+      rows.length,
+      rows[0].length
+    );
+
+    console.log("Result:", totalPadroesXMAS);
   } catch (error) {
     console.error(error);
   }
