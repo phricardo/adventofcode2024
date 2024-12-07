@@ -79,7 +79,6 @@ function searchDirection(x, y, dx, dy, rows, word, wordLength) {
 function countWordInGrid(rows, word, wordLength) {
   let count = 0;
 
-  // Percorrer cada célula do grid
   for (let x = 0; x < rows.length; x++) {
     for (let y = 0; y < rows[0].length; y++) {
       if (searchDirection(x, y, 1, 0, rows, word, wordLength)) count++; // Direção para a direita (horizontal)
